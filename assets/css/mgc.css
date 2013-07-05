@@ -1,0 +1,20 @@
+/**
+* 
+* This file is part of MuraGoogleCalendar
+*
+* Copyright 2013 Stephen J. Withington, Jr.
+* Licensed under the Apache License, Version v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+*/
+#loading { 
+	display: none;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+#calendar {
+	width: auto;
+	margin: 0 auto;
+}
