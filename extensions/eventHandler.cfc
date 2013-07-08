@@ -22,13 +22,17 @@ component accessors=true extends='mura.plugin.pluginGenericEventHandler' output=
 		var pluginAssetPath = '#arguments.$.globalConfig('context')#/plugins/#this.pluginName#/assets';
 		var contentRenderer = new contentRenderer(arguments.$);
 		arguments.$.setCustomMuraScopeKey(this.pluginName, contentRenderer);
+
 		// CfStatic
 		arguments.$[this.pluginName].cfStatic = new requirements.org.cfstatic.CfStatic(
-				staticDirectory = ExpandPath('#pluginAssetPath#')
-				, staticURL = '#pluginAssetPath#/'
-				, minifyMode = 'package'
-				, checkForUpdates = !arguments.$.siteConfig('cache')
-			);
+			staticDirectory = ExpandPath('#pluginAssetPath#')
+			, staticURL = '#pluginAssetPath#/'
+			, minifyMode = 'package'
+			, checkForUpdates = !arguments.$.siteConfig('cache')
+			, jsDependencyFile = ExpandPath('#pluginAssetPath#/js/dependency.info')
+			, cssDependencyFile = ExpandPath('#pluginAssetPath#/css/dependency.info')
+		);
+
 		set$(arguments.$);
 	}
 
@@ -36,16 +40,5 @@ component accessors=true extends='mura.plugin.pluginGenericEventHandler' output=
 		arguments.$.loadJSLib();
 		variables.pluginConfig.addToHTMLHeadQueue('extensions/queues/head.cfm');
 	}
-
-	/*
-	public any function onCalendarMuraGoogleCalendarBodyRender(required struct $) {
-		var local = {};
-		set$(arguments.$);
-		savecontent variable='str' {
-			WriteOutput(arguments.$.setDynamicContent(arguments.$.content('body')));
-		}
-		return str & $.MuraGoogleCalendar.dspMuraGoogleCalendar($=arguments.$, mgcurl=$.content('mgcurl'), mgcclassname=$.content('mgcclassname'));
-	}
-	*/
 
 }

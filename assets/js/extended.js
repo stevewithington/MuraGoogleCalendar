@@ -6,7 +6,6 @@
  * Licensed under the Apache License, Version v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Place any custom CSS for this plugin in this file.
+ * Place any custom JavaScript for this plugin in this file.
  *
  */
- .mgcWrapper { padding-bottom: 1em; }

@@ -27,8 +27,8 @@
 </cfsilent>
 <cfoutput>
 	<!--- Calendar --->
-	<div class="mgcWrapper_#mgcid#">
-		<div id="loading_#mgcid#"><h4>Loading events...</h4></div>
+	<div id="mgcWrapper_#mgcid#" class="mgcWrapper">
+		<div id="loading_#mgcid#" class="alert alert-block alert-success">Loading events...</div>
 		<div id="calendar_#mgcid#"></div>
 	</div>
 	<script>

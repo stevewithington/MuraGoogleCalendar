@@ -38,53 +38,6 @@
 				persist="false" />
 		</displayobjects>
 
-		<extensions>
-			<!--- 
-				Not sure if I want to go this route ... need to rethink this just a bit
-			--->
-			<!---
-			<extension type="Calendar" subType="MuraGoogleCalendar" availableSubTypes="">
-				<attributeset name="MuraGoogleCalendar Options" container="Basic">
-
-					<attribute 
-						name="mgcurl"
-						label="Google Calendar XML Feed URL"
-						hint="(Required) Paste the Google Calendar's XML Feed URL here. See the plugin instructions on how to obtain the XML Feed URL."
-						type="text"
-						defaultValue=""
-						required="true"
-						validation=""
-						regex=""
-						message="Please enter the XML Feed URL for the Google Calendar"
-						optionList=""
-						optionLabelList="" />
-
-					<attribute 
-						name="mgcclassname"
-						label="CSS Class Name"
-						hint="(Optional) CSS class to attach to each event for this calendar"
-						type="text"
-						defaultValue=""
-						required="false"
-						validation=""
-						regex=""
-						message=""
-						optionList=""
-						optionLabelList="" />
-
-					<!--- 
-						Other potential attributes to be implemented in a future version:
-						* color
-						* backgroundColor
-						* borderColor
-						* textColor
-					--->
-
-				</attributeset>
-			</extension>
-			--->
-			<!--- /END Calendar/MuraGoogleCalendar --->
-		</extensions>
-
+		<extensions></extensions>
 	</plugin>
 </cfoutput>
