@@ -19,8 +19,16 @@ component accessors=true extends='mura.plugin.pluginGenericEventHandler' output=
 	}
 
 	public any function onSiteRequestStart(required struct $) {
+		var pluginAssetPath = '#arguments.$.globalConfig('context')#/plugins/#this.pluginName#/assets';
 		var contentRenderer = new contentRenderer(arguments.$);
 		arguments.$.setCustomMuraScopeKey(this.pluginName, contentRenderer);
+		// CfStatic
+		arguments.$[this.pluginName].cfStatic = new requirements.org.cfstatic.CfStatic(
+				staticDirectory = ExpandPath('#pluginAssetPath#')
+				, staticURL = '#pluginAssetPath#/'
+				, minifyMode = 'package'
+				, checkForUpdates = !arguments.$.siteConfig('cache')
+			);
 		set$(arguments.$);
 	}
 
@@ -29,6 +37,7 @@ component accessors=true extends='mura.plugin.pluginGenericEventHandler' output=
 		variables.pluginConfig.addToHTMLHeadQueue('extensions/queues/head.cfm');
 	}
 
+	/*
 	public any function onCalendarMuraGoogleCalendarBodyRender(required struct $) {
 		var local = {};
 		set$(arguments.$);
@@ -37,5 +46,6 @@ component accessors=true extends='mura.plugin.pluginGenericEventHandler' output=
 		}
 		return str & $.MuraGoogleCalendar.dspMuraGoogleCalendar($=arguments.$, mgcurl=$.content('mgcurl'), mgcclassname=$.content('mgcclassname'));
 	}
+	*/
 
 }

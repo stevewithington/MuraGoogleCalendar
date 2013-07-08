@@ -39,6 +39,10 @@
 		</displayobjects>
 
 		<extensions>
+			<!--- 
+				Not sure if I want to go this route ... need to rethink this just a bit
+			--->
+			<!---
 			<extension type="Calendar" subType="MuraGoogleCalendar" availableSubTypes="">
 				<attributeset name="MuraGoogleCalendar Options" container="Basic">
 
@@ -77,7 +81,9 @@
 					--->
 
 				</attributeset>
-			</extension><!--- /END Calendar/MuraGoogleCalendar --->
+			</extension>
+			--->
+			<!--- /END Calendar/MuraGoogleCalendar --->
 		</extensions>
 
 	</plugin>

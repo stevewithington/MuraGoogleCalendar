@@ -27,13 +27,13 @@
 </cfsilent>
 <cfoutput>
 	<!--- Calendar --->
-	<div class="mgcWrapper">
-		<div id="loading">loading...</div>
-		<div id="calendar"></div>
+	<div class="mgcWrapper_#mgcid#">
+		<div id="loading_#mgcid#"><h4>Loading events...</h4></div>
+		<div id="calendar_#mgcid#"></div>
 	</div>
 	<script>
 		$(document).ready(function() {
-			$('##calendar').fullCalendar({
+			$('##calendar_#mgcid#').fullCalendar({
 				buttonText: {
 					day: 'Day',
 					week: 'Week',
@@ -54,7 +54,7 @@
 				},
 				defaultView: 'month',
 				eventClick:function(event){window.open(event.url,'gcalevent','width=700,height=600');return false;},
-				loading:function(bool){if(bool){$('##loading').show();}else{$('##loading').hide();}}
+				loading:function(bool){if(bool){$('##loading_#mgcid#').show();}else{$('##loading_#mgcid#').hide();}}
 			});
 		});
 	</script>

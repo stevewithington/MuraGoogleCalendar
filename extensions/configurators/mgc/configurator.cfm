@@ -46,7 +46,7 @@
 					name="mgcurl" 
 					id="mgcurl" 
 					class="objectParam" 
-					value="#params.mgcurl#" />
+					value="#params.mgcurl#">
 			</dd>
 
 			<dt>
@@ -57,7 +57,7 @@
 					name="mgcclassname" 
 					id="mgcclassname" 
 					class="objectParam" 
-					value="#params.mgcclassname#" />
+					value="#params.mgcclassname#">
 			</dd>
 
 			<!--- Future other fields:
@@ -67,8 +67,9 @@
 			--->
 
 			<!--- MISC. : Not necessary, just using as an example of how to add hidden fields --->
-			<input type="hidden" name="configuredDTS" class="objectParam" value="#Now()#" />
-			<input type="hidden" name="configuredBy" class="objectParam" value="#HTMLEditFormat($.currentUser('LName'))#, #HTMLEditFormat($.currentUser('FName'))#" />
+			<input type="hidden" name="configuredDTS" class="objectParam" value="#Now()#">
+			<input type="hidden" name="configuredBy" class="objectParam" value="#HTMLEditFormat($.currentUser('LName'))#, #HTMLEditFormat($.currentUser('FName'))#">
+			<input type="hidden" name="mgcid" class="objectParam" value="#Right(LCase(REReplace(CreateUUID(), '-', '', 'all')),11)#">
 
 		</dl>
 

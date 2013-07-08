@@ -44,13 +44,13 @@
 	<h3>Place MuraGoogleCalendar</h3>
 	<p>There are a few ways to add a MuraGoogleCalendar to your content:</p>
 	
-	<h4>As a Content Node</h4>
+	<!--- <h4>As a Content Node</h4>
 	<ul>
 		<li>Click Add Content</li>
 		<li>Select 'Calendar/MuraGoogleCalendar'</li>
 		<li>Enter the Google Calendar's XML Feed URL</li>
 		<li>Then, Publish your content and preview</li>
-	</ul>
+	</ul> --->
 
 	<h4>As a Display Object</h4>
 	<ul>

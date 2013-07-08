@@ -9,7 +9,7 @@
 */
 component accessors=true extends='mura.cfobject' output=false {
 
-	property name='$';
+	property name='$' hint='mura scope';
 
 	public any function init(required struct $) {
 		set$(arguments.$);
@@ -23,6 +23,7 @@ component accessors=true extends='mura.cfobject' output=false {
 	public string function dspMuraGoogleCalendar(
 		mgcurl=''
 		, mgcclassname=''
+		, mgcid='#Right(LCase(REReplace(CreateUUID(), '-', '', 'all')),11)#'
 		, $=get$()
 	) {
 		var local = {};
@@ -42,6 +43,7 @@ component accessors=true extends='mura.cfobject' output=false {
 		local.defaultParams = {
 			mgcurl = ''
 			, mgcclassname = ''
+			, mgcid = Right(LCase(REReplace(CreateUUID(), '-', '', 'all')),11)
 			, $ = arguments.$
 		};
 		StructAppend(local.params, local.defaultParams, false);
