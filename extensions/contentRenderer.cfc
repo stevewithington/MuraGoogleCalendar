@@ -22,7 +22,14 @@ component accessors=true extends='mura.cfobject' output=false {
 
 	public string function dspMuraGoogleCalendar(
 		mgcurl=''
+		, mgctimeformat='h(:mm)t'
+		, mgcshowviewoptions='1'
+		, mgcdefaultview='month'
 		, mgcclassname=''
+		, mgcwindowwidth='800'
+		, mgcwindowheight='500'
+		, mgccolor=''
+		, mgctextcolor=''
 		, mgcid='#Right(LCase(REReplace(CreateUUID(), '-', '', 'all')),11)#'
 		, $=get$()
 	) {
@@ -42,7 +49,14 @@ component accessors=true extends='mura.cfobject' output=false {
 		local.params = arguments.$.event('objectParams');
 		local.defaultParams = {
 			mgcurl = ''
+			, mgctimeformat = 'h(:mm)t'
+			, mgcshowviewoptions = '1'
+			, mgcdefaultview = 'month'
 			, mgcclassname = ''
+			, mgcwindowwidth = '800'
+			, mgcwindowheight = '500'
+			, mgccolor = ''
+			, mgctextcolor = ''
 			, mgcid = Right(LCase(REReplace(CreateUUID(), '-', '', 'all')),11)
 			, $ = arguments.$
 		};
