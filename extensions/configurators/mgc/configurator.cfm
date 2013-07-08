@@ -56,7 +56,6 @@
 </script>
 
 <cfoutput>
-
 	<div id="availableObjectParams"	
 		data-object="plugin" 
 		data-name="muraGoogleCalendar" 
@@ -145,7 +144,7 @@
 				</div>
 				<div id="collapseAdvanced" class="accordion-body collapse">
 					<div class="accordion-inner">
-						<!--- mgccolor --->
+						<!--- mgcwindowwidth + mgdwindowheight --->
 						<div class="control-group">
 							<div class="span6">
 								<label for="mgcwindowwidth" class="control-label">Calendar Event Window Width</label>
@@ -169,6 +168,7 @@
 							</div>
 						</div>
 
+						<!--- mgccolor + mgctextcolor --->
 						<div class="control-group">
 							<div class="span6">
 								<label for="mgccolor" class="control-label">Calendar Event Background Color</label>
@@ -181,7 +181,7 @@
 								</div>
 							</div>
 							<div class="span6">
-								<label for="mgctextcolor" class="control-label">Calendar Event TEXT Color</label>
+								<label for="mgctextcolor" class="control-label">Calendar Event Text Color</label>
 								<div class="controls">
 									<input type="text" 
 										name="mgctextcolor" 
@@ -192,6 +192,7 @@
 							</div>
 						</div>
 
+						<!--- mgcclassname ---->
 						<div class="control-group">
 							<label for="mgcclassname" class="control-label">CSS Class Name</label>
 							<div class="controls">
@@ -204,8 +205,7 @@
 						</div>
 					</div><!--- /.accordion-inner --->
 				</div><!--- /collapseAdvanced --->
-			</div>
-	
+			</div><!--- /.accordion-group --->
 		</div><!--- /.accordion --->		
 
 		<input type="hidden" name="configuredDTS" class="objectParam" value="#Now()#">
