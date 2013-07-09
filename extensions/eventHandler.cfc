@@ -16,6 +16,10 @@ component accessors=true extends='mura.plugin.pluginGenericEventHandler' output=
 	public any function onApplicationLoad(required struct $) {
 		variables.pluginConfig.addEventHandler(this);
 		set$(arguments.$);
+		lock scope='application' type='exclusive' timeout=10 {
+			//application[this.pluginName] = this;
+			application[this.pluginName] = new contentRenderer(arguments.$);
+		};
 	}
 
 	public any function onSiteRequestStart(required struct $) {

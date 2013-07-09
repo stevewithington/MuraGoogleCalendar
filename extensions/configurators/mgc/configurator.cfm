@@ -13,20 +13,10 @@
 		application.serviceFactory.getBean('MuraScope').init('session.siteid') : 
 		application.serviceFactory.getBean('MuraScope').init('default');
 
-	params = IsJSON($.event('params')) ? DeSerializeJSON($.event('params')) : {};
+	rbFactory = application.MuraGoogleCalendar.getResourceBundleFactory($);
 
-	defaultParams = {
-		mgcurl = ''
-		, mgctimeformat = 'h(:mm)t'
-		, mgcshowviewoptions = '1'
-		, mgcdefaultview = 'month'
-		, mgcclassname = ''
-		, mgcwindowwidth = '800'
-		, mgcwindowheight = '500'
-		, mgccolor = ''
-		, mgctextcolor = ''
-	};
-	
+	params = IsJSON($.event('params')) ? DeSerializeJSON($.event('params')) : {};
+	defaultParams = application.MuraGoogleCalendar.getDefaultParams();
 	StructAppend(params, defaultParams, false);
 </cfscript>
 
@@ -65,14 +55,14 @@
 			<!--- BASIC --->
 			<div class="accordion-group">
 				<div class="accordion-heading">
-					<a class="accordion-toggle" data-toggle="collapse" data-parent="##mgcaccordion" href="##collapseBasic">Basic Settings</a>
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="##mgcaccordion" href="##collapseBasic">#rbFactory.getKey('configurator.basicsettings')#</a>
 				</div>
 				<div id="collapseBasic" class="accordion-body collapse in">
 					<div class="accordion-inner">
 						<!--- mgcurl --->
 						<div class="control-group">
-							<label for="mgcurl" class="control-label">Google Calendar XML Feed URL</label>
-							<p><a href="https://support.google.com/calendar/answer/37103?hl=en" target="_blank">Find your calendar's address &gt;</a></p>
+							<label for="mgcurl" class="control-label">#rbFactory.getKey('configurator.feedurl')#</label>
+							<p><a href="https://support.google.com/calendar/answer/37103?hl=en" target="_blank">#rbFactory.getKey('configurator.feedurldesc')# &gt;</a></p>
 							<div class="controls">
 								<input type="text" 
 									name="mgcurl" 
@@ -84,17 +74,17 @@
 
 						<!--- mgctimeformat --->
 						<div class="control-group">
-							<label for="mgctimeformat" class="control-label">Time Format</label>
-							<p>How should the time be displayed for each event?</p>
+							<label for="mgctimeformat" class="control-label">#rbFactory.getKey('configurator.timeformat')#</label>
+							<p>#rbFactory.getKey('configurator.timeformatdesc')#</p>
 							<div class="controls">
 								<select name="mgctimeformat" id="mgctimeformat" class="objectParam">
-									<optgroup label="North American Formats">
+									<optgroup label="#rbFactory.getKey('configurator.northamericanformats')#">
 										<option value="h(:mm)t" <cfif params.mgctimeformat eq 'h(:mm)t'>selected="selected"</cfif>>5p</option>
 										<option value="h:mmt" <cfif params.mgctimeformat eq 'h:mmt'>selected="selected"</cfif>>5:00p</option>
 										<option value="h:mm{ - h:mm}t" <cfif params.mgctimeformat eq 'h:mm{ - h:mm}t'>selected="selected"</cfif>>5:00p - 6:30p</option>
 										<option value="h:mm{ - h:mm}" <cfif params.mgctimeformat eq 'h:mm{ - h:mm}'>selected="selected"</cfif>>5:00 - 6:30</option>
 									</optgroup>
-									<optgroup label="Global/Military Formats">
+									<optgroup label="#rbFactory.getKey('configurator.globalformats')#">
 										<option value="H(:mm)" <cfif params.mgctimeformat eq 'H(:mm)'>selected="selected"</cfif>>17</option>
 										<option value="H:mm" <cfif params.mgctimeformat eq 'H:mm'>selected="selected"</cfif>>17:00</option>
 										<option value="H(:mm){ - H(:mm)}" <cfif params.mgctimeformat eq 'H(:mm){ - H(:mm)}'>selected="selected"</cfif>>17 - 18:30</option>
@@ -104,33 +94,63 @@
 							</div>
 						</div>
 
-						<!--- mgcshowviewoptions --->
+						<!--- mgcfirstday --->
 						<div class="control-group">
-							<label for="mgcshowviewoptions" class="control-label">Show View Options?</label>
+							<label for="mgcfirstday" class="control-label">#rbFactory.getKey('configurator.firstdayofweek')#</label>							
+							<div class="controls">
+								<select name="mgcfirstday" id="mgcfirstday" class="objectParam">
+									<cfset idx=0>
+									<cfset arrWeekdays=ListToArray(rbFactory.getKey('calendar.weekdaylong'))>
+									<cfloop array="#arrWeekdays#" index="day">
+										<option value="#idx#" <cfif params.mgcfirstday eq idx>selected="selected"</cfif>>
+											#day#
+										</option>
+										<cfset idx++>
+									</cfloop>
+								</select>
+							</div>
+						</div>
+
+						<!--- mgcweeknds --->
+						<div class="control-group">
+							<label for="mgcweekends" class="control-label">#rbFactory.getKey('configurator.showweekends')#</label>
 							<div class="radio inline">
-								<input type="radio" name="mgcshowviewoptions" id="viewYes" class="objectParam" value="1" <cfif YesNoFormat(params.mgcshowviewoptions)>checked="checked"</cfif>>
-								<label for="viewYes">Yes</label>
+								<input type="radio" name="mgcweekends" id="weekendsViewYes" class="objectParam" value="1" <cfif YesNoFormat(params.mgcweekends)>checked="checked"</cfif>>
+								<label for="weekendsViewYes">#rbFactory.getKey('configurator.yes')#</label>
 							</div>
 							<div class="radio inline">
-								<input type="radio" name="mgcshowviewoptions" id="viewNo" class="objectParam" value="0" <cfif !YesNoFormat(params.mgcshowviewoptions)>checked="checked"</cfif>>
-								<label for="viewNo">No</label>
+								<input type="radio" name="mgcweekends" id="weekendsViewNo" class="objectParam" value="0" <cfif !YesNoFormat(params.mgcweekends)>checked="checked"</cfif>>
+								<label for="weekendsViewNo">#rbFactory.getKey('configurator.no')#</label>
+							</div>
+						</div>
+
+						<!--- mgcshowviewoptions --->
+						<div class="control-group">
+							<label for="mgcshowviewoptions" class="control-label">#rbFactory.getKey('configurator.showviewoptions')#</label>
+							<div class="radio inline">
+								<input type="radio" name="mgcshowviewoptions" id="optionsViewYes" class="objectParam" value="1" <cfif YesNoFormat(params.mgcshowviewoptions)>checked="checked"</cfif>>
+								<label for="optionsViewYes">#rbFactory.getKey('configurator.yes')#</label>
+							</div>
+							<div class="radio inline">
+								<input type="radio" name="mgcshowviewoptions" id="optionsViewNo" class="objectParam" value="0" <cfif !YesNoFormat(params.mgcshowviewoptions)>checked="checked"</cfif>>
+								<label for="optionsViewNo">#rbFactory.getKey('configurator.no')#</label>
 							</div>
 						</div>
 
 						<!--- mgcdefaultview --->
 						<div id="customViewOptions" class="control-group" <cfif !YesNoFormat(params.mgcshowviewoptions)>style="display:none;"</cfif>>
-							<label for="mgcdefaultview" class="control-label">Default View</label>
+							<label for="mgcdefaultview" class="control-label">#rbFactory.getKey('configurator.defaultview')#</label>
 							<div class="radio inline">
 								<input type="radio" name="mgcdefaultview" id="viewMonth" class="objectParam" value="month" <cfif params.mgcdefaultview eq 'month'>checked="checked"</cfif>>
-								<label for="viewMonth">Month</label>
+								<label for="viewMonth">#rbFactory.getKey('calendar.month')#</label>
 							</div>
 							<div class="radio inline">
 								<input type="radio" name="mgcdefaultview" id="viewWeek" class="objectParam" value="agendaWeek" <cfif params.mgcdefaultview eq 'agendaWeek'>checked="checked"</cfif>>
-								<label for="viewWeek">Week</label>
+								<label for="viewWeek">#rbFactory.getKey('calendar.week')#</label>
 							</div>
 							<div class="radio inline">
 								<input type="radio" name="mgcdefaultview" id="viewDay" class="objectParam" value="agendaDay" <cfif params.mgcdefaultview eq 'agendaDay'>checked="checked"</cfif>>
-								<label for="viewDay">Day</label>
+								<label for="viewDay">#rbFactory.getKey('calendar.day')#</label>
 							</div>
 						</div><!--- /customViewOptions --->
 					</div><!--- /.accordion-inner --->
@@ -140,14 +160,14 @@
 			<!--- ADVANCED --->
 			<div class="accordion-group">
 				<div class="accordion-heading">
-					<a class="accordion-toggle" data-toggle="collapse" data-parent="##mgcaccordion" href="##collapseAdvanced">Advanced</a>
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="##mgcaccordion" href="##collapseAdvanced">#rbFactory.getKey('configurator.advancedsettings')#</a>
 				</div>
 				<div id="collapseAdvanced" class="accordion-body collapse">
 					<div class="accordion-inner">
 						<!--- mgcwindowwidth + mgdwindowheight --->
 						<div class="control-group">
 							<div class="span6">
-								<label for="mgcwindowwidth" class="control-label">Calendar Event Window Width</label>
+								<label for="mgcwindowwidth" class="control-label">#rbFactory.getKey('configurator.eventwindowwidth')#</label>
 								<div class="controls">
 									<input type="text" 
 										name="mgcwindowwidth" 
@@ -157,7 +177,7 @@
 								</div>
 							</div>
 							<div class="span6">
-								<label for="mgcwindowheight" class="control-label">Calendar Event Window Height</label>
+								<label for="mgcwindowheight" class="control-label">#rbFactory.getKey('configurator.eventwindowheight')#</label>
 								<div class="controls">
 									<input type="text" 
 										name="mgcwindowheight" 
@@ -171,7 +191,7 @@
 						<!--- mgccolor + mgctextcolor --->
 						<div class="control-group">
 							<div class="span6">
-								<label for="mgccolor" class="control-label">Calendar Event Background Color</label>
+								<label for="mgccolor" class="control-label">#rbFactory.getKey('configurator.eventbackgroundcolor')#</label>
 								<div class="controls">
 									<input type="text" 
 										name="mgccolor" 
@@ -181,7 +201,7 @@
 								</div>
 							</div>
 							<div class="span6">
-								<label for="mgctextcolor" class="control-label">Calendar Event Text Color</label>
+								<label for="mgctextcolor" class="control-label">#rbFactory.getKey('configurator.eventtextcolor')#</label>
 								<div class="controls">
 									<input type="text" 
 										name="mgctextcolor" 
@@ -194,7 +214,7 @@
 
 						<!--- mgcclassname ---->
 						<div class="control-group">
-							<label for="mgcclassname" class="control-label">CSS Class Name</label>
+							<label for="mgcclassname" class="control-label">#rbFactory.getKey('configurator.cssclassname')#</label>
 							<div class="controls">
 								<input type="text" 
 									name="mgcclassname" 
@@ -213,5 +233,4 @@
 		<input type="hidden" name="mgcid" class="objectParam" value="#Right(LCase(REReplace(CreateUUID(), '-', '', 'all')),11)#">
 
 	</div><!--- /availableObjectParams --->
-
 </cfoutput>
