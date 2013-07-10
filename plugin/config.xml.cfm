@@ -15,7 +15,7 @@
 		<package>MuraGoogleCalendar</package>
 		<directoryFormat>packageOnly</directoryFormat>
 		<loadPriority>5</loadPriority>
-		<version>1.1.1</version>
+		<version>1.1.2</version>
 		<provider>Steve Withington</provider>
 		<providerURL>http://stephenwithington.com</providerURL>
 		<category>Application</category>
