@@ -7,7 +7,7 @@
 * http://www.apache.org/licenses/LICENSE-2.0
 *
 */
-function init(data) {
+function initMuraGoogleCalendarConfigurator(data) {
 
 	initConfigurator(data,{
 		url: '../plugins/MuraGoogleCalendar/extensions/configurators/mgc/configurator.cfm'

@@ -24,46 +24,38 @@
 
 	<h3>You must first make your Google Calendar public</h3>
 	<ol>
-		<li>In the Google Calendar interface, locate the "My Calendar" box on the left.</li>
-		<li>Click the arrow next to the calendar you need."</li>
-		<li>A menu will appear. Click "Share this calendar.</li>
-		<li>Check "Make this calendar public."</li>
-		<li>Make sure "Share only my free/busy information" is **unchecked**.</li>
-		<li>Click "Save."</li>
+		<li>In the Google Calendar interface, locate the &quot;My Calendar&quot; box on the left.</li>
+		<li>Click the arrow next to the calendar you need.&quot;</li>
+		<li>A menu will appear. Click &quot;Share this calendar.</li>
+		<li>Check &quot;Make this calendar public.&quot;</li>
+		<li>Make sure &quot;Share only my free/busy information&quot; is **unchecked**.</li>
+		<li>Click &quot;Save.&quot;</li>
 	</ol>
 
 	<h3>Then, you must obtain your calendar's XML Feed URL</h3>
 	<ol>
-		<li>In the Google Calendar instance, locate the "My Calendar" box on the left.</li>
+		<li>In the Google Calendar instance, locate the &quot;My Calendar&quot; box on the left.</li>
 		<li>Click the arrow next to the calendar you need.</li>
-		<li>A menu will appear. Click "Calendar settings."</li>
-		<li>In the "Calendar Address" section of the screen, click the XML badge.</li>
+		<li>A menu will appear. Click &quot;Calendar settings.&quot;</li>
+		<li>In the &quot;Calendar Address&quot; section of the screen, click the XML badge.</li>
 		<li>Your XML Feed's URL will appear. Copy it!</li>
 	</ol>
 
 	<h3>Place MuraGoogleCalendar</h3>
 	<p>There are a few ways to add a MuraGoogleCalendar to your content:</p>
-	
-	<!--- <h4>As a Content Node</h4>
-	<ul>
-		<li>Click Add Content</li>
-		<li>Select 'Calendar/MuraGoogleCalendar'</li>
-		<li>Enter the Google Calendar's XML Feed URL</li>
-		<li>Then, Publish your content and preview</li>
-	</ul> --->
 
 	<h4>As a Display Object</h4>
 	<ul>
 		<li><strong>Via the User Interface</strong>
 			<ol>
-				<li>Go to the "Edit Content" screen of a content item</li>
-				<li>Select the "Layout &amp; Objects" tab</li>
-				<li>Select "Plugins" from the Available Content Objects select menu</li>
-				<li>Select "MuraGoogleCalendar" from the list of Plugins</li>
-				<li>Select "Mura Google Calendar" and assign it to your desired display region (e.g., Left Column, Main Content, etc.)</li>
-				<li>This should launch the "MuraGoogleCalendar Configurator" window</li>
+				<li>Go to the &quot;Edit Content&quot; screen of a content item</li>
+				<li>Select the &quot;Layout &amp; Objects&quot; tab</li>
+				<li>Select &quot;Plugins&quot; from the Available Content Objects select menu</li>
+				<li>Select &quot;MuraGoogleCalendar&quot; from the list of Plugins</li>
+				<li>Select &quot;Mura Google Calendar&quot; and assign it to your desired display region (e.g., Left Column, Main Content, etc.)</li>
+				<li>This should launch the &quot;MuraGoogleCalendar Configurator&quot; window</li>
 				<li>Paste/Enter the Google Calendar's XML Feed URL into the corresponding form field</li>
-				<li>Click "Save"</li>
+				<li>Click &quot;Save&quot;</li>
 				<li>Then, Publish your content and preview</li>
 			</ol>
 		</li>

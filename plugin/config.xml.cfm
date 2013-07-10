@@ -15,7 +15,7 @@
 		<package>MuraGoogleCalendar</package>
 		<directoryFormat>packageOnly</directoryFormat>
 		<loadPriority>5</loadPriority>
-		<version>1.1.0</version>
+		<version>1.1.1</version>
 		<provider>Steve Withington</provider>
 		<providerURL>http://stephenwithington.com</providerURL>
 		<category>Application</category>
@@ -34,7 +34,7 @@
 				component="extensions.contentRenderer"
 				displaymethod="dspConfiguredMuraGoogleCalendar"
 				configuratorJS="extensions/configurators/mgc/configurator.js"
-				configuratorInit="init"
+				configuratorInit="initMuraGoogleCalendarConfigurator"
 				persist="false" />
 		</displayobjects>
 
