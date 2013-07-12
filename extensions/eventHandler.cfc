@@ -17,7 +17,6 @@ component accessors=true extends='mura.plugin.pluginGenericEventHandler' output=
 		variables.pluginConfig.addEventHandler(this);
 		set$(arguments.$);
 		lock scope='application' type='exclusive' timeout=10 {
-			//application[this.pluginName] = this;
 			application[this.pluginName] = new contentRenderer(arguments.$);
 		};
 	}

@@ -32,4 +32,5 @@
 		,dayNamesShort: #SerializeJSON(ListToArray(local.rb.getKey('calendar.weekdayShort')))#
 		,timeFormat:'#arguments.mgctimeformat#',firstDay:#arguments.mgcfirstday#,weekends:#arguments.mgcweekends#,header:{left:'today prev,next title',center:'',right:<cfif YesNoFormat(arguments.mgcshowviewoptions)>'agendaDay,agendaWeek,month'<cfelse>''</cfif>}<cfif YesNoFormat(arguments.mgcshowviewoptions)>,defaultView:'#arguments.mgcdefaultview#'</cfif>,eventClick:function(event){window.open(event.url,'gcalevent','width=#Val(arguments.mgcwindowwidth)#,height=#arguments.mgcwindowheight#');return false;},loading:function(bool){if(bool){$('##loading_#mgcid#').show();}else{$('##loading_#mgcid#').hide();}}
 	});
-});</script></cfoutput>
+});</script>
+</cfoutput>

@@ -38,21 +38,6 @@ component accessors=true extends='mura.cfobject' output=false {
 		};
 	}
 
-	// public string function dspMuraGoogleCalendar(
-	// 	mgcurl=''
-	// 	, mgctimeformat='h(:mm)t'
-	// 	, mgcshowviewoptions='1'
-	// 	, mgcdefaultview='month'
-	// 	, mgcfirstday='0'
-	// 	, mgcweekends='1'
-	// 	, mgcclassname=''
-	// 	, mgcwindowwidth='800'
-	// 	, mgcwindowheight='500'
-	// 	, mgccolor=''
-	// 	, mgctextcolor=''
-	// 	, mgcid='#Right(LCase(REReplace(CreateUUID(), '-', '', 'all')),11)#'
-	// 	, $=get$()
-	// ) {
 	public string function dspMuraGoogleCalendar(argumentCollection=getDefaultParams()) {
 		var local = {};
 		if ( !Len(Trim(arguments.mgcurl)) ) { return ''; }

@@ -10,8 +10,8 @@
 */
 
 	$ = StructKeyExists(session, 'siteid') ? 
-		application.serviceFactory.getBean('MuraScope').init('session.siteid') : 
-		application.serviceFactory.getBean('MuraScope').init('default');
+		application.serviceFactory.getBean('$').init('session.siteid') : 
+		application.serviceFactory.getBean('$').init('default');
 
 	rbFactory = application.MuraGoogleCalendar.getResourceBundleFactory($);
 
