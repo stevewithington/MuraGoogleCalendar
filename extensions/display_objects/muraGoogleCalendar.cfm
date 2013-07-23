@@ -21,13 +21,13 @@
 				url: '#ListGetAt(arguments.mgcurl, local.i, ';')#'
 				,ignoreTimezone: false
 				<cfif Len(arguments.mgcclassname)>
-				,className:<cfif ListLen(arguments.mgcclassname, ';') and ListLen(arguments.mgcclassname, ';') eq ListLen(arguments.mgcurl, ';')>'#ListGetAt(arguments.mgcclassname, local.i, ';')#'<cfelse>'#arguments.mgcclassname#'</cfif>
+				,className:<cfif ListLen(arguments.mgcclassname, ';') eq ListLen(arguments.mgcurl, ';')>'#ListGetAt(arguments.mgcclassname, local.i, ';')#'<cfelse>'#arguments.mgcclassname#'</cfif>
 				</cfif>
 				<cfif Len(arguments.mgccolor)>
-				,color:<cfif ListLen(arguments.mgccolor, ';') and ListLen(arguments.mgccolor, ';') eq ListLen(arguments.mgcurl, ';')>'#ListGetAt(arguments.mgccolor, local.i, ';')#'<cfelse>'#arguments.mgccolor#'</cfif>
+				,color:<cfif ListLen(arguments.mgccolor, ';') eq ListLen(arguments.mgcurl, ';')>'#ListGetAt(arguments.mgccolor, local.i, ';')#'<cfelse>'#arguments.mgccolor#'</cfif>
 				</cfif>
 				<cfif Len(arguments.mgctextcolor)>
-				,textColor:<cfif ListLen(arguments.mgctextcolor, ';') and ListLen(arguments.mgctextcolor, ';') eq ListLen(arguments.mgcurl, ';')>'#ListGetAt(arguments.mgctextcolor, local.i, ';')#'<cfelse>'#arguments.mgctextcolor#'</cfif>
+				,textColor:<cfif ListLen(arguments.mgctextcolor, ';') eq ListLen(arguments.mgcurl, ';')>'#ListGetAt(arguments.mgctextcolor, local.i, ';')#'<cfelse>'#arguments.mgctextcolor#'</cfif>
 				</cfif>
 			}<cfif local.i neq ListLen(arguments.mgcurl, ';')>,</cfif>
 			</cfloop>
