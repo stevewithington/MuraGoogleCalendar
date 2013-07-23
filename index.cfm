@@ -51,7 +51,7 @@
 	</ul>
 
 	<h3>Plugin Display Objects</h3>
-	<p>There is one display object availabe:</p>
+	<p>There is one display object available:</p>
 
 	<ul>
 		<li><strong>Mura Google Calendar</strong>
