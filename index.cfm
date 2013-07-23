@@ -106,7 +106,7 @@
 				<p><strong>Examples:</strong> h(:mm)t = 5p, h:mmt = 5:00p, h:mm{ - h:mm}t = 5:00p - 6:30p, h:mm{ - h:mm} = 5:00 - 6:30, H(:mm) = 17, H:mm = 17:00, H(:mm){ - H(:mm)} = 17 - 18:30, H:mm{ - H:mm} = 17:00 - 18:30</p></td>
 			</tr>
 			<tr>
-				<td class="code">mgcViewOptions</td>
+				<td class="code">mgcShowViewOptions</td>
 				<td>Optional</td>
 				<td class="code">1</td>
 				<td><p>If set to <span class="code">1</span>, calendar will display the 'Day, Week, Month' buttons. Boolean.</p></td>
