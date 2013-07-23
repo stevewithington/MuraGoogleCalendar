@@ -162,7 +162,7 @@
 				<td class="code">##3a87ad</td>
 				<td>
 					<p>Sets the background <em>and</em> border colors for all events on the calendar. You can use any of the CSS color formats such as <span class="code">##f00, ##ff0000, rgb(255,0,0)</span>, or <span class="code">red</code>.</p>
-					<p><strong>NOTE:</strong> If passing in multiple Google Calendar XML Feed URLs, you may also pass multiple mgcColor values as a list delimited by a semicolor ( <strong>;</strong> ). <em>However, the length of the list must be equal to the length of the Google Calendar XML Feed URLs.</em></p>
+					<p><strong>NOTE:</strong> If passing in multiple Google Calendar XML Feed URLs, you may also pass in multiple mgcColor values as a list delimited by a semicolor ( <strong>;</strong> ). <em>However, the length of the list must be equal to the length of the Google Calendar XML Feed URLs.</em></p>
 				</td>
 			</tr>
 			<tr>
