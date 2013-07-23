@@ -42,9 +42,9 @@ component accessors=true extends='mura.cfobject' output=false {
 		var local = {};
 		if ( !Len(Trim(arguments.mgcurl)) ) { return ''; }
 
-		local.tracePoint = arguments.$.initTracePoint('MuraGoogleCalendar.extensions.contentRenderer.cfc:dspMuraGoogleCalendar()');
-
 		StructAppend(arguments, getDefaultParams(), false);
+
+		local.tracePoint = arguments.$.initTracePoint('MuraGoogleCalendar.extensions.contentRenderer.cfc:dspMuraGoogleCalendar()');
 
 		// Custom RB Factory
 		local.rb = getResourceBundleFactory(arguments.$);
