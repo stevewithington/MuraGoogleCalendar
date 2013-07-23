@@ -98,7 +98,8 @@
 				<td>Required</td>
 				<td class="code">&nbsp;</td>
 				<td><p>The full Google Calendar XML Feed URL. (<em>See <a href="##gcalinfo"><strong>Google Calendar Info</strong></a></em>)</p>
-				<p><strong>Examples:</strong></p>
+				<p><em>You may also pass in multiple Google Calendar XML Feed URLs as a list delimited by a semicolon ( <strong>;</strong> ).</em></p>
+				<p><strong>Examples Google Calendar XML Feed URLs:</strong></p>
 				<ul>
 					<li><strong>Geek / Nerd Holidays</strong><br>
 					https://www.google.com/calendar/feeds/ka8rjt289e79lt3eilc8ii50o0@group.calendar.google.com/public/basic</li>
@@ -159,13 +160,19 @@
 				<td class="code">mgcColor</td>
 				<td>Optional</td>
 				<td class="code">##3a87ad</td>
-				<td><p>Sets the background <em>and</em> border colors for all events on the calendar. You can use any of the CSS color formats such as <span class="code">##f00, ##ff0000, rgb(255,0,0)</span>, or <span class="code">red</code>.</p></td>
+				<td>
+					<p>Sets the background <em>and</em> border colors for all events on the calendar. You can use any of the CSS color formats such as <span class="code">##f00, ##ff0000, rgb(255,0,0)</span>, or <span class="code">red</code>.</p>
+					<p><strong>NOTE:</strong> If passing in multiple Google Calendar XML Feed URLs, you may also pass multiple mgcColor values as a list delimited by a semicolor ( <strong>;</strong> ). <em>However, the length of the list must be equal to the length of the Google Calendar XML Feed URLs.</em></p>
+				</td>
 			</tr>
 			<tr>
 				<td class="code">mgcTextColor</td>
 				<td>Optional</td>
 				<td class="code">##fff</td>
-				<td><p>Sets the text colors for all events on the calendar. You can use any of the CSS color formats such as <span class="code">##f00, ##ff0000, rgb(255,0,0)</span>, or <span class="code">red</code>.</p></td>
+				<td>
+					<p>Sets the text colors for all events on the calendar. You can use any of the CSS color formats such as <span class="code">##f00, ##ff0000, rgb(255,0,0)</span>, or <span class="code">red</code>.</p>
+					<p><strong>NOTE:</strong> If passing in multiple Google Calendar XML Feed URLs, you may also pass in multiple mgcTextColor values delimited by a semicolor ( <strong>;</strong> ). <em>However, the length of the list must be equal to the length of the Google Calendar XML Feed URLs.</em></p>
+				</td>
 			</tr>
 		</tbody>
 	</table>
