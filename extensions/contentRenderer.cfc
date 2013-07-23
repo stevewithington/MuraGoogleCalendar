@@ -38,11 +38,13 @@ component accessors=true extends='mura.cfobject' output=false {
 		};
 	}
 
-	public string function dspMuraGoogleCalendar(argumentCollection=getDefaultParams()) {
+	public string function dspMuraGoogleCalendar() {
 		var local = {};
 		if ( !Len(Trim(arguments.mgcurl)) ) { return ''; }
 
 		local.tracePoint = arguments.$.initTracePoint('MuraGoogleCalendar.extensions.contentRenderer.cfc:dspMuraGoogleCalendar()');
+
+		StructAppend(arguments, getDefaultParams(), false);
 
 		// Custom RB Factory
 		local.rb = getResourceBundleFactory(arguments.$);
