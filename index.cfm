@@ -26,6 +26,7 @@
 
 	<h2>Instructions</h2>
 
+	<a name="gcalinfo"></a>
 	<h3>Google Calendar Info</h3>
 	<ul>
 		<li>
@@ -96,14 +97,21 @@
 				<td class="code">mgcURL</td>
 				<td>Required</td>
 				<td class="code">&nbsp;</td>
-				<td><p>The full Google Calendar XML Feed URL.</p></td>
+				<td><p>The full Google Calendar XML Feed URL. (<em>See <a href="##gcalinfo"><strong>Google Calendar Info</strong></a></em>)</p>
+				<p><strong>Examples:</strong></p>
+				<ul>
+					<li><strong>Geek / Nerd Holidays</strong><br>
+					https://www.google.com/calendar/feeds/ka8rjt289e79lt3eilc8ii50o0@group.calendar.google.com/public/basic</li>
+					<li><strong>US Holidays</strong><br>
+					https://www.google.com/calendar/feeds/usa__en@holiday.calendar.google.com/public/basic</li>
+				</td>
 			</tr>
 			<tr>
 				<td class="code">mgcTimeFormat</td>
 				<td>Optional</td>
 				<td class="code">h(:mm)t</td>
 				<td><p>Determines the time-text that will be displayed on each event.</p> 
-				<p><strong>Examples:</strong> h(:mm)t = 5p, h:mmt = 5:00p, h:mm{ - h:mm}t = 5:00p - 6:30p, h:mm{ - h:mm} = 5:00 - 6:30, H(:mm) = 17, H:mm = 17:00, H(:mm){ - H(:mm)} = 17 - 18:30, H:mm{ - H:mm} = 17:00 - 18:30</p></td>
+				<p><strong>Examples:</strong><br>h(:mm)t = 5p, h:mmt = 5:00p, h:mm{ - h:mm}t = 5:00p - 6:30p, h:mm{ - h:mm} = 5:00 - 6:30, H(:mm) = 17, H:mm = 17:00, H(:mm){ - H(:mm)} = 17 - 18:30, H:mm{ - H:mm} = 17:00 - 18:30</p></td>
 			</tr>
 			<tr>
 				<td class="code">mgcShowViewOptions</td>
