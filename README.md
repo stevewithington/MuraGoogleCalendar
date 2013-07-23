@@ -1,8 +1,6 @@
 #MuraGoogleCalendar
 
-This is a [Mura CMS](http://getmura.com) plugin that displays events from a public Google Calendar.
-
-This plugin leverages the [FullCalendar](http://arshaw.com/fullcalendar/) [jQuery](http://jquery.com) plugin. This allows for a much easier way for front and back end developers to visually customize the calendar as opposed to using Google's embed code.
+This is a [Mura CMS](http://getmura.com) plugin that displays events from a public Google Calendar. This plugin leverages the [FullCalendar](http://arshaw.com/fullcalendar/) [jQuery](http://jquery.com) plugin. This allows for a much easier way for front and back end developers to visually customize the calendar as opposed to using Google's embed code.
 
 ##Tested With
 * Mura CMS Core Version 6.0+

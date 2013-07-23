@@ -58,7 +58,7 @@ component accessors=true extends='mura.cfobject' output=false {
 	public any function dspConfiguredMuraGoogleCalendar(required struct $) {
 		var local = {};
 		local.params = arguments.$.event('objectParams');
-		local.defaultParams = getDefaultParams($);
+		local.defaultParams = getDefaultParams(arguments.$);
 		StructAppend(local.params, local.defaultParams, false);
 		local.str = dspMuraGoogleCalendar(argumentCollection=local.params);
 		return local.str;
@@ -69,7 +69,7 @@ component accessors=true extends='mura.cfobject' output=false {
 		return new mura.resourceBundle.resourceBundleFactory(
 			parentFactory = arguments.$.siteConfig('rbFactory')
 			, resourceDirectory = resourceDirectory
-			, locale = $.siteConfig('JavaLocale')
+			, locale = arguments.$.siteConfig('JavaLocale')
 		);
 	}
 
