@@ -11,4 +11,5 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 *_notes/
-/assets/min
+config.codekit
+.codekit-cache/

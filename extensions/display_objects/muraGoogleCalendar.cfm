@@ -3,7 +3,7 @@
 * 
 * This file is part of MuraGoogleCalendar
 *
-* Copyright 2013 Stephen J. Withington, Jr.
+* Copyright 2013-2014 Stephen J. Withington, Jr.
 * Licensed under the Apache License, Version v2.0
 * http://www.apache.org/licenses/LICENSE-2.0
 * 
@@ -15,7 +15,8 @@
 </div>
 <script>$(document).ready(function() {
 	$('##calendar_#mgcid#').fullCalendar({
-		eventSources:[
+		googleCalendarApiKey:'#local.apikey#'
+		,eventSources:[
 			<cfloop from="1" to="#ListLen(arguments.mgcurl, ';')#" index="local.i">
 			{
 				url: '#ListGetAt(arguments.mgcurl, local.i, ';')#'

@@ -8,7 +8,7 @@ This is a [Mura CMS](http://getmura.com) plugin that displays events from a publ
 * Railo 4.0.4
 
 ##License
-Copyright 2013 Stephen J. Withington, Jr.
+Copyright 2013-2014 Stephen J. Withington, Jr.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 

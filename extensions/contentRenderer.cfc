@@ -2,7 +2,7 @@
 * 
 * This file is part of MuraGoogleCalendar
 *
-* Copyright 2013 Stephen J. Withington, Jr.
+* Copyright 2013-2014 Stephen J. Withington, Jr.
 * Licensed under the Apache License, Version v2.0
 * http://www.apache.org/licenses/LICENSE-2.0
 *
@@ -42,18 +42,20 @@ component accessors=true extends='mura.cfobject' output=false {
 		var local = {};
 		if ( !Len(Trim(arguments.mgcurl)) ) { return ''; }
 
+		local.tracePoint = $.initTracePoint('MuraGoogleCalendar.extensions.contentRenderer.cfc:dspMuraGoogleCalendar()');
+
+		local.apikey = $.getBean('pluginManager').getConfig('MuraGoogleCalendar').getSetting('mgcAPIKey');
+
 		StructAppend(arguments, getDefaultParams(), false);
 
-		local.tracePoint = arguments.$.initTracePoint('MuraGoogleCalendar.extensions.contentRenderer.cfc:dspMuraGoogleCalendar()');
-
 		// Custom RB Factory
-		local.rb = getResourceBundleFactory(arguments.$);
+		local.rb = getResourceBundleFactory($);
 
 		savecontent variable='local.str' {
 			include 'display_objects/MuraGoogleCalendar.cfm';
 		}
 
-		arguments.$.commitTracePoint(local.tracePoint);
+		$.commitTracePoint(local.tracePoint);
 		return local.str;
 	}
 
