@@ -20,6 +20,9 @@ Once you have entered your domain(s) for use with your API Key, install the plug
 
 After installing the plugin, visit the plugin's administration page for detailed instructions on how to use it.
 
+###Note
+The [Google Calendar API](https://console.developers.google.com/project) has an initial free quota of 1,000,000 requests/day. If you need more than that, you will have to [apply for a higher quota](https://support.google.com/code/contact/calendar_api_quota).
+
 ##Tested With
 * Mura CMS Core Version 6.1+
 * Adobe ColdFusion 11.0.02
