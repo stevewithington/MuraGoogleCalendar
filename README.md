@@ -1,11 +1,29 @@
 #MuraGoogleCalendar
 
-This is a [Mura CMS](http://getmura.com) plugin that displays events from a public Google Calendar. This plugin leverages the [FullCalendar](http://arshaw.com/fullcalendar/) [jQuery](http://jquery.com) plugin. This allows for a much easier way for front and back end developers to visually customize the calendar as opposed to using Google's embed code.
+This is a [Mura CMS](http://getmura.com) plugin that displays events from a public Google Calendar. This plugin leverages the [FullCalendar](http://fullcalendar.io) [jQuery](http://jquery.com) plugin. This allows for a much easier way for front and back end developers to visually customize the calendar as opposed to using Google's embed code.
+
+##Important!
+To use this plugin, you must first have a [Google Calendar API Key](https://console.developers.google.com/project).
+
+  1. Go to the [Google Developer Console](https://console.developers.google.com/project) and click **Create Project**.
+  2. In the "New Project" popup, enter any Project Name you wish, then click **Create** (it might take a few seconds).
+  3. Once in the project, go to **APIs & auth > APIs** (in the left menu).
+  4. Find "Calendar API" in the list and click the **OFF** button to turn it **ON**.
+  5. On the sidebar menu, click **APIs & auth > Credentials**.
+  6. In the "Public API access" section, click **Create new Key**.
+  7. Choose **Browser key**.
+  8. If you know what domains will host your calendar, enter them into the box. Otherwise, leave it blank. You can always change it later.
+  9. Your new API KEY will appear. It might take a second or two before it starts working.
+  10. Copy the API KEY for use when installing the plugin.
+
+Once you have entered your domain(s) for use with your API Key, install the plugin, and enter your API Key in the required field.
+
+After installing the plugin, visit the plugin's administration page for detailed instructions on how to use it.
 
 ##Tested With
-* Mura CMS Core Version 6.0+
-* Adobe ColdFusion 10.0.10
-* Railo 4.0.4
+* Mura CMS Core Version 6.1+
+* Adobe ColdFusion 11.0.02
+* Railo 4.2.1.008
 
 ##License
 Copyright 2013-2014 Stephen J. Withington, Jr.

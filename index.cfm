@@ -22,7 +22,7 @@
 	Author: <a href="http://stephenwithington.com" target="_blank">Steve Withington</a></em></p>
 
 	<h2>Overview</h2>
-	<p>This is a <a href="http://getmura.com">Mura CMS</a> plugin that displays events from a public Google Calendar. This plugin leverages the <a href="http://arshaw.com/fullcalendar/">FullCalendar</a> <a href="http://jquery.com">jQuery</a> plugin. This allows for a much easier way for front and back end developers to visually customize the calendar as opposed to using Google's embed code.</p>
+	<p>This is a <a href="http://getmura.com">Mura CMS</a> plugin that displays events from a public Google Calendar. This plugin leverages the <a href="http://fullcalendar.io/">FullCalendar</a> <a href="http://jquery.com">jQuery</a> plugin. This allows for a much easier way for front and back end developers to visually customize the calendar as opposed to using Google's embed code.</p>
 
 	<h2>Instructions</h2>
 
@@ -179,9 +179,9 @@
 
 	<h2>Tested With</h2>
 	<ul>
-		<li>Mura CMS Core Version <strong>6.0+</strong></li>
-		<li>Adobe ColdFusion <strong>10.0.10</strong></li>
-		<li>Railo <strong>4.0.4</strong></li>
+		<li>Mura CMS Core Version <strong>6.1+</strong></li>
+		<li>Adobe ColdFusion <strong>11.0.02</strong></li>
+		<li>Railo <strong>4.2.1.008</strong></li>
 	</ul>
 
 	<h2>Need help?</h2>
