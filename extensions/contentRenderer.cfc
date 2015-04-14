@@ -2,7 +2,7 @@
 * 
 * This file is part of MuraGoogleCalendar
 *
-* Copyright 2013-2014 Stephen J. Withington, Jr.
+* Copyright 2013-2015 Stephen J. Withington, Jr.
 * Licensed under the Apache License, Version v2.0
 * http://www.apache.org/licenses/LICENSE-2.0
 *
@@ -52,7 +52,7 @@ component accessors=true extends='mura.cfobject' output=false {
 		local.rb = getResourceBundleFactory($);
 
 		savecontent variable='local.str' {
-			include 'display_objects/MuraGoogleCalendar.cfm';
+			include 'display_objects/muraGoogleCalendar.cfm';
 		}
 
 		$.commitTracePoint(local.tracePoint);

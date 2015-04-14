@@ -29,7 +29,7 @@ The [Google Calendar API](https://console.developers.google.com/project) has an 
 * Railo 4.2.1.008
 
 ##License
-Copyright 2013-2014 Stephen J. Withington, Jr.
+Copyright 2013-2015 Stephen J. Withington, Jr.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 

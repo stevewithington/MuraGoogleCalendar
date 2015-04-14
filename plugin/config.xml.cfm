@@ -3,7 +3,7 @@
 * 
 * This file is part of MuraGoogleCalendar
 *
-* Copyright 2013-2014 Stephen J. Withington, Jr.
+* Copyright 2013-2015 Stephen J. Withington, Jr.
 * Licensed under the Apache License, Version v2.0
 * http://www.apache.org/licenses/LICENSE-2.0
 *
@@ -15,7 +15,7 @@
 		<package>MuraGoogleCalendar</package>
 		<directoryFormat>packageOnly</directoryFormat>
 		<loadPriority>5</loadPriority>
-		<version>2.0.0</version>
+		<version>2.0.1</version>
 		<provider>Steve Withington</provider>
 		<providerURL>http://stephenwithington.com</providerURL>
 		<category>Application</category>
