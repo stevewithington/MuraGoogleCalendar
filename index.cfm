@@ -27,26 +27,26 @@
 	<h2>Instructions</h2>
 
 	<a name="gcalinfo"></a>
-	<h3>Google Calendar Info</h3>
+	<h3>Make Your Google Calendar(s) Public</h3>
 	<ul>
 		<li>
-			<p><strong>You must first make your Google Calendar public</strong></p>
+			<p><strong>Any Google Calendar(s) you wish to use with this plugin, must be made public:</strong></p>
 			<ol>
-				<li>In the Google Calendar interface, locate the <strong>My Calendar</strong> box on the left.</li>
-				<li>Click the arrow next to the calendar you need.</li>
-				<li>A menu will appear. Click <strong>Share this calendar</strong>.</li>
-				<li>Check <strong>Make this calendar public.</strong></li>
-				<li>Make sure <strong>Share only my free/busy information</strong> is <strong>unchecked</strong>.</li>
-				<li>Click <strong>Save.</strong></li>
+				<li>In the Google Calendar interface, locate the 'My Calendars' area on the left.</li>
+				<li>Hover over the calendar you need and click the downward arrow.</li>
+				<li>A menu will appear. Click 'Share this Calendar'.</li>
+				<li>Check 'Make this calendar public'.</li>
+				<li>Make sure 'Share only my free/busy information' is <strong>unchecked</strong>.</li>
+				<li>Click 'Save'.</li>
 			</ol>
 		</li>
 		<li>
-			<p><strong>Then, you must obtain your calendar's XML Feed URL</strong></p>
+			<p><strong>Obtain Your Google Calendar's ID</strong></p>
 			<ol>
-				<li>In the Google Calendar instance, locate the <strong>My Calendar</strong> box on the left.</li>
-				<li>In the calendar list on the left side of the page, click the down-arrow button next to the appropriate calendar, then select <strong>Calendar settings</strong>.</li>
-				<li>In the <strong>Calendar Address</strong> section, click the <strong>XML</strong> button. A pop-up window with your calendar's public URL will appear.</li>
-				<li>Use this XML Feed URL. Copy it!</li>
+				<li>In the Google Calendar interface, locate the 'My calendars' area on the left.</li>
+				<li>Hover over the calendar you need and click the downward arrow.</li>
+				<li>A menu will appear. Click 'Calendar settings'.</li>
+				<li>In the 'Calendar Address' section of the screen, you will see your Calendar ID. It will look something like <strong>abcd1234@group.calendar.google.com</strong>.</li>
 			</ol>
 		</li>
 	</ul>
@@ -63,7 +63,7 @@
 				<li>Select <strong>MuraGoogleCalendar</strong> from the list of Plugins</li>
 				<li>Select <strong>Mura Google Calendar</strong> and assign it to your desired display region (e.g., Left Column, Main Content, etc.)</li>
 				<li>This should launch the <strong>MuraGoogleCalendar Configurator</strong> window</li>
-				<li>Paste/Enter the Google Calendar's XML Feed URL into the corresponding form field</li>
+				<li>Paste/Enter the Google Calendar's ID into the corresponding form field</li>
 				<li>Click <strong>Save</strong></li>
 				<li>Then, Publish your content and preview</li>
 			</ol>
@@ -76,10 +76,10 @@
 	<h3>Example Code</h3>
 
 	<h4>Mura Tag Method</h4>
-	<pre class="notice">[mura]$.muraGoogleCalendar.dspMuraGoogleCalendar(mgcURL='YourGoogleCalendarXMLFeedURLGoesHere')[/mura]</pre>
+	<pre class="notice">[mura]$.muraGoogleCalendar.dspMuraGoogleCalendar(mgcURL='YourGoogleCalendarIDGoesHere')[/mura]</pre>
 
 	<h4>CFML Method</h4>
-	<pre class="notice">##$.muraGoogleCalendar.dspMuraGoogleCalendar(mgcURL='YourGoogleCalendarXMLFeedURLGoesHere')##</pre>
+	<pre class="notice">##$.muraGoogleCalendar.dspMuraGoogleCalendar(mgcURL='YourGoogleCalendarIDGoesHere')##</pre>
 	
 
 	<h4>Available Attributes</h4>
@@ -97,14 +97,16 @@
 				<td class="code">mgcURL</td>
 				<td>Required</td>
 				<td class="code">&nbsp;</td>
-				<td><p>The full Google Calendar XML Feed URL. (<em>See <a href="##gcalinfo"><strong>Google Calendar Info</strong></a></em>)</p>
-				<p><em>You may also pass in multiple Google Calendar XML Feed URLs as a list delimited by a semicolon ( <strong>;</strong> ).</em></p>
-				<p><strong>Examples Google Calendar XML Feed URLs:</strong></p>
-				<ul>
-					<li><strong>Geek / Nerd Holidays</strong><br>
-					https://www.google.com/calendar/feeds/ka8rjt289e79lt3eilc8ii50o0@group.calendar.google.com/public/basic</li>
-					<li><strong>US Holidays</strong><br>
-					https://www.google.com/calendar/feeds/usa__en@holiday.calendar.google.com/public/basic</li>
+				<td>
+					<p>The full Google Calendar ID. (<em>See <a href="##gcalinfo"><strong>Google Calendar Info</strong></a></em>)</p>
+					<p><em>You may also pass in multiple Google Calendar IDs as a list delimited by a semicolon ( <strong>;</strong> ).</em></p>
+					<!--- <p><strong>Examples Google Calendar IDs:</strong></p>
+					<ul>
+						<li><strong>Geek / Nerd Holidays</strong><br>
+						https://www.google.com/calendar/feeds/ka8rjt289e79lt3eilc8ii50o0@group.calendar.google.com/public/basic</li>
+						<li><strong>US Holidays</strong><br>
+						https://www.google.com/calendar/feeds/usa__en@holiday.calendar.google.com/public/basic</li>
+					</ul> --->
 				</td>
 			</tr>
 			<tr>
@@ -179,9 +181,9 @@
 
 	<h2>Tested With</h2>
 	<ul>
-		<li>Mura CMS Core Version <strong>6.1+</strong></li>
-		<li>Adobe ColdFusion <strong>11.0.02</strong></li>
-		<li>Railo <strong>4.2.1.008</strong></li>
+		<li>Mura CMS Core Version <strong>7.1+</strong></li>
+		<li>Adobe ColdFusion <strong>2016+</strong></li>
+		<li>Lucee <strong>5+</strong></li>
 	</ul>
 
 	<h2>Need help?</h2>

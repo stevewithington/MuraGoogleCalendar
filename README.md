@@ -33,8 +33,8 @@ Any Google Calendar(s) you wish to use with this plugin, must be made public:
 ### Obtain Your Google Calendar's ID
 
   1. In the Google Calendar interface, locate the "My calendars" area on the left.
-  2. Hoever over the calendar you need and click the downward arrow.
-  3. A men u will appear. Click "Calendar settings".
+  2. Hover over the calendar you need and click the downward arrow.
+  3. A menu will appear. Click "Calendar settings".
   4. In the "Calendar Address" section of the screen, you will see your Calendar ID. It will look something like `abcd1234@group.calendar.google.com`.
 
 ### Note
