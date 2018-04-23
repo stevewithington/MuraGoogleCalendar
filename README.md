@@ -40,12 +40,12 @@ Any Google Calendar(s) you wish to use with this plugin, must be made public:
 ### Note
 The [Google Calendar API](https://console.developers.google.com/project) has an initial free quota of 1,000,000 requests/day. If you need more than that, you will have to [apply for a higher quota](https://support.google.com/code/contact/calendar_api_quota).
 
-##Tested With
+## Tested With
 * Mura CMS Core Version 7.1+
 * Adobe ColdFusion 2016+
 * Lucee 5+
 
-##License
+## License
 Copyright 2013-2018 Stephen J. Withington, Jr.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
