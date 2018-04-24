@@ -36,10 +36,6 @@
 		</settings>
 
 		<eventHandlers>
-			<eventHandler 
-				event="onApplicationLoad" 
-				component="extensions.eventHandler" 
-				persist="false" />
 		</eventHandlers>
 
 		<extensions></extensions>
