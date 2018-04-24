@@ -2,7 +2,7 @@
 * 
 * This file is part of MuraGoogleCalendar
 *
-* Copyright 2013-2015 Stephen J. Withington, Jr.
+* Copyright 2013-2018 Stephen J. Withington, Jr.
 * Licensed under the Apache License, Version v2.0
 * http://www.apache.org/licenses/LICENSE-2.0
 *
@@ -13,19 +13,18 @@ component accessors=true output=false {
 
 	this.pluginName = 'MuraGoogleCalendar';
 
-	include '../../config/applicationSettings.cfm';
-	include '../../config/mappings.cfm';
+	include '../../core/appcfc/applicationSettings.cfm';
 	include '../mappings.cfm';
 
 	public any function onApplicationStart() {
-		include '../../config/appcfc/onApplicationStart_include.cfm';
+		include '../../core/appcfc/onApplicationStart_include.cfm';
 		var $ = get$();
 		return true;
 	}
 
 	public any function onRequestStart(required string targetPage) {
 		var $ = get$();
-		include '../../config/appcfc/onRequestStart_include.cfm';
+		include '../../core/appcfc/onRequestStart_include.cfm';
 		if ( StructKeyExists(url, $.globalConfig('appreloadkey')) ) {
 			onApplicationStart();
 		}
